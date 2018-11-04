@@ -59,7 +59,7 @@ class Authors extends React.Component {
     deleteAuthor = (author) => {
         this.setState({ selectedAuthor: author })
         this.props.deleteBooks('author', author.name)
-        this.props.deleteAuthor(this.props.authors, author)
+        this.props.deleteAuthor(author)
     }
 
     render() {

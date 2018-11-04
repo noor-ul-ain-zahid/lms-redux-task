@@ -45,10 +45,10 @@ class Publishers extends React.Component {
     }
     updatePublisher = (publisher) => {
         const updatedData = { "id": this.state.selectedPublisher.id, ...publisher },
-            { publishers, editPublisherDetails } = this.props
+            { publishers, updatePublisher } = this.props
 
         if (notExisting(publishers,updatedData)) {
-            editPublisherDetails(this.state.selectedPublisher, updatedData)
+            updatePublisher(this.state.selectedPublisher, updatedData)
             this.toggleState('')
         }
         else { this.setState({ error: 'error' }) }
